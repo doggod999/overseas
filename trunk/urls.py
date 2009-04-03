@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^$', 'overseas.index.main'),
     (r'^login/$', 'overseas.login.views.login'),
+    (r'^home/$', 'overseas.home.views.main'),
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.STATIC_PATH}),
 
