@@ -27,6 +27,9 @@ a:hover {
 .fr{ float:right}
 .clearfix{ clear:both}
 
+img.logoimg{
+	width: 240px;
+}
 
 
 /* header */
@@ -53,4 +56,5 @@ div.bt  { margin:50px 0 0 70px}
 /* footer */
 #footer { height:50px; margin:20px}
 #footer a {color:#333333}
+
 
