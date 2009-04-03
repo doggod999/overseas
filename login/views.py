@@ -12,4 +12,5 @@ def login(request):
     except:
         return HttpResponseRedirect('/')
     
-    return HttpResponse(user.true_name)
+    request.session['user'] = user
+    return HttpResponseRedirect('/home/')
