@@ -19,8 +19,7 @@ a:hover {
 #wrap {
 	width:742px;
 	text-align:left;
-	margin:0 auto;padding:50px 
-	
+	margin:0 auto;padding:50px ;
 }
 
 .fl{ float:left}
@@ -46,13 +45,24 @@ img.logoimg{
 .main { width:160px}
 .main h2 {font-size:16px}
 .side {margin:70px 0 0 0 ; width: 250px;}
-.si {margin-left: 60px;}
+div.si 
+{
+	margin-left: 10px;
+}
 #ct { width:380px; padding:50px 0 0 50px; font-size:11px}
 #ct div.fr h2 {font-size:24px; font-weight:700; text-align:right}
 ul#nav li {float:left; padding:0 10px}
 ul#nav {position:absolute; right:10px; top:10px; font-weight:700}
-ul#nav li a:hover {color:#990000}
-div.bt  { margin:50px 0 0 70px}
+
+ul#nav li a:hover 
+{
+	color:#990000;
+}
+
+div.bt
+{ 	
+	margin:50px 0 0 70px;
+}
 /* footer */
 #footer { height:50px; margin:20px}
 #footer a {color:#333333}
