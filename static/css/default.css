@@ -21,7 +21,7 @@ a:hover {
 	width:1000px;
 	text-align:left;
 	margin:0 auto;
-	background:url(/static/images/bg.jpg);
+	background:url(/static/images/seabg.jpg);
 }
 
 .fl{ float:left}
@@ -75,33 +75,46 @@ a:hover {
 }
 
 #nav a:hover {
-	background:url(/static/images/nav_hover.jpg) -10px; 
+	background: url(/static/images/nav_hover.jpg) -10px; 
 }
 
 /* content */
 #content { }
 
-.main {
+div.main {
 	width:570px; 
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 }
 
-#text {
+div.main h2 {
+	font-size:25px; 
+	padding-bottom:5px;
+	color: #FFFF93;
+}
+
+div.text {
 	width:530px; 
+	min-height: 100px;
+	background: rgb(110,171,225);
+	margin-bottom: 20px;
 }
 
-#text h2 {
-	font-size:30px; 
-	padding-bottom:20px;
-}
-
-#text p img {
+div.text p img {
 	float:left; 
 	padding:0 20px 0 0;
 }
 
-#text a { 
+div.text a { 
 	color: #FFCC00;
+}
+
+div.text a:hover { 
+	color: #FFCC00;
+}
+
+div.more {
+	font-size: 15px;
+	margin: 10px 0px 0px 470px;
 }
 
 #col {
@@ -163,9 +176,9 @@ ul.menu {
 }
 
 ul.menu li{
-	list-style-type: none;
 	padding-bottom: 5px;
 	margin: 5px 0px 0px 0px;
+	list-style: disc url(/static/images/fish.jpg) inside;
 }
 
 ul.menu a{
