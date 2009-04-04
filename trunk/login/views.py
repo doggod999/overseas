@@ -2,7 +2,7 @@
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 
-from overseas.login.models import User
+from overseas.home.models import User
 
 def login(request):
     username = request.POST.get('username', None)
