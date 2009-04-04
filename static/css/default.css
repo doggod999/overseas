@@ -20,7 +20,8 @@ a:hover {
 #wrap {
 	width:1000px;
 	text-align:left;
-	margin:0 auto;background:url(/static/images/bg.jpg);
+	margin:0 auto;
+	background:url(/static/images/bg.jpg);
 }
 
 .fl{ float:left}
@@ -30,30 +31,93 @@ a:hover {
 
 
 /* header */
-#header { position:relative;height:260px  }
-#logo {position:absolute; top:60px; right:130px}
+#header { 
+	position:relative;
+	height:260px  
+}
+
+#logo {
+	position:absolute; 
+	top:60px; 
+	right:130px;
+}
+
 #logo h1 {
 	font-size:34px;
 	color:#fff
 }
+
 #logo div {
 	padding-left:100px
 }
-#nav { position:absolute; top:180px; left:470px; background:url(/static/images/nav.jpg); width:435px;height:46px; line-height:46px; padding: 0 0 0 40px }
-#nav li {float:left;  font-weight:700; width:100px }
-#nav a {text-decoration:none; display:block; text-align:center;}
-#nav a:hover {background:url(/static/images/nav_hover.jpg) -10px; }
+
+#nav { 
+	position:absolute; 
+	top:180px; 
+	left:470px; 
+	background:url(/static/images/nav.jpg); 
+	width:435px;
+	height:46px; 
+	line-height:46px; 
+	padding: 0 0 0 40px 
+}
+
+#nav li {
+	float:left;  
+	font-weight:700; 
+	width:100px ;
+}
+
+#nav a {
+	text-decoration:none; 
+	display:block; 
+	text-align:center;
+}
+
+#nav a:hover {
+	background:url(/static/images/nav_hover.jpg) -10px; 
+}
+
 /* content */
 #content { }
-.main {width:570px; font-family:Verdana, Arial, Helvetica, sans-serif;}
-#text {width:530px; }
-#text h2 {font-size:30px; padding-bottom:20px}
-#text p img {float:left; padding:0 20px 0 0}
-#text a { color: #FFCC00}
 
-#col {margin:50px 0 0 0;width:300px; background:url(/static/images/col.jpg); width: 535px; height:156px ; }
+.main {
+	width:570px; 
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
 
-#col div {width: 200px; margin: 20px 0 0 70px; display:inline}
+#text {
+	width:530px; 
+}
+
+#text h2 {
+	font-size:30px; 
+	padding-bottom:20px;
+}
+
+#text p img {
+	float:left; 
+	padding:0 20px 0 0;
+}
+
+#text a { 
+	color: #FFCC00;
+}
+
+#col {
+	margin:50px 0 0 0;
+	width:300px; 
+	background:url(/static/images/col.jpg); 
+	width: 535px; 
+	height:156px; 
+}
+
+#col div {
+	width: 200px; 
+	margin: 20px 0 0 70px; 
+	display:inline;
+}
+
 #col .first  {margin: 20px 0 0 50px }
 #col li{line-height:20px;}
 .side {margin:0 0 0 40px; width:250px;display: inline;}
@@ -64,3 +128,7 @@ a:hover {
 #footer { background:url(/static/images/ft.jpg); height:133px; position:relative}
 #ftinner{ position:absolute; bottom:20px; width:680px; margin-left:120px}
 .ftlink {width:500px;}
+
+img.logoimg {
+	width: 240px;
+}

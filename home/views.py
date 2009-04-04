@@ -4,4 +4,16 @@ from overseas.login.models import User
 
 def main(request):
     user = request.session.get('user', None)
-    return render_to_response('home.html', {'user': user})
+    if user:
+        log_url = '/logout/'
+        log_txt = '退出'
+        return render_to_response('home.html', {'user': user, 
+                                                'log_url': log_url,
+                                                'log_txt': log_txt})
+    
+    else:
+        log_url = '/'
+        log_txt = '登录'
+        return render_to_response('home.html', {'user': user, 
+                                                'log_url': log_url,
+                                                'log_txt': log_txt})

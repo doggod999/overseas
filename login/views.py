@@ -14,3 +14,10 @@ def login(request):
     
     request.session['user'] = user
     return HttpResponseRedirect('/home/')
+
+def logout(request):
+    try:
+        del request.session['user']
+    except KeyError:
+        pass
+    return HttpResponseRedirect("/home/")
