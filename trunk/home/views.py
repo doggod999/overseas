@@ -17,3 +17,6 @@ def main(request):
         return render_to_response('home.html', {'user': user, 
                                                 'log_url': log_url,
                                                 'log_txt': log_txt})
+        
+def about(request):
+    pass
