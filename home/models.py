@@ -19,7 +19,7 @@ class News(models.Model):
     post_time = models.DateTimeField(auto_now_add=True)
     last_modify_time = models.DateTimeField(auto_now=True)
     author = models.CharField(max_length=20)
-    image = models.ImageField(upload_to='photo/news/%Y%M', blank=True)
+    image = models.ImageField(upload_to='photo/news/%Y%m', blank=True)
     
     def __unicode__(self):
         return self.title
