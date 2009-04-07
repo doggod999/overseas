@@ -1,7 +1,7 @@
 {% extends "basic.html" %}
 
 {% block content %}
-<div class="main fr">
+	<div class="main fr">
       	<a href="/news/"><h2>最新消息</h2></a>
         <div class="text">
         	{% for new in news%}
@@ -17,17 +17,16 @@
           	{% endfor %}
           	<div class="more"><a href="/news/">more...</a></div>
         </div>
-        <h2>本周新关注项目
-        {% if user %}
+        <h2>本周新关注项目</h2>
+        <div class="text">
+        	<div class="list">FDNGP</div>
+        
+        {% if logined %}
           <a href="/admin/home/project/add/">增加关注项目</a><br>
         {% endif %}
-        </h2>
-        <div class="text">
-          <div class="more">
-          
-          <a href="#">more...</a>
-          </div>
-          
+        <div class="more">
+        <a href="#">more...</a>
+        </div>
         </div>
         <h2>本周提交项目</h2>
         <div class="text">
@@ -36,8 +35,8 @@
         <h2>正在进行的项目</h2>
         <div class="text">
         dd
-          <div class="more"><a href="#">more...</a></div>
+        <div class="more"><a href="#">more...</a></div>
         </div>
         <div class="clearfix"></div>
-      </div>
+    </div>
 {% endblock %}
