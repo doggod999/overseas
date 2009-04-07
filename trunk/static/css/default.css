@@ -11,11 +11,11 @@ body {
 }
 a {
 	text-decoration:none;
-		color:#fff
+	color:#fff
 }
 a:hover {
 	text-decoration: underline;
-		color:#A1E062
+	color:#A1E062
 }
 #wrap {
 	width:1000px;
@@ -32,7 +32,7 @@ a:hover {
 
 /* header */
 #header { 
-	position:relative;
+	position: relative;
 	height:260px  
 }
 
@@ -94,38 +94,42 @@ div.main h2 {
 
 div.text {
 	width:530px; 
-	min-height: 100px;
-	background: rgb(110,171,225);
+	background: #6EABE1;
 	margin-bottom: 20px;
-}
-
-div.text p{
-	float:left; 
-	padding:0 20px 0 0;
-}
-
-div.text img {
-	float:left; 
-	padding:0 20px 0 0;
-	width: 50px;
+	padding: 5px;
 }
 
 div.text a { 
+	color: #FFFF00;
+}
+
+div.text a:hover { 
 	color: #FFCC00;
 }
 
 div.date {
-	position: absolute;
-	right: 15px;
+	position: relative;
+	left: 0px;
 	top: 0px;
-	line-height: 35px;
-	color: #AFAFA4;
+	color: #000;
 	font-weight: bold;
 }
 
+div.news {
+	width:530px; 
+	margin-bottom: 20px;
+}
 
-div.text a:hover { 
-	color: #FFCC00;
+div.news h3 {
+	font-size:20px; 
+	color: #000;
+}
+
+img.newsimage {
+	float: left;
+	padding:0 20px 0 0;
+	width: 50px;
+	text-align: center;
 }
 
 div.more {
@@ -172,7 +176,7 @@ div.more {
 }
 
 .side ul {
-	margin:30px  0 30px 20px;
+	margin: 30px  0 30px 20px;
 }
 
 

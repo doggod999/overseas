@@ -1,6 +1,7 @@
 # coding=utf-8
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 
 from overseas.home.models import User
 from overseas.home.models import News
@@ -24,7 +25,7 @@ def main(request):
 
         
 def about(request):
-    pass
+    return HttpResponseRedirect("/")
 
 def resource(request):
     user = request.session.get('user', None)
@@ -34,3 +35,9 @@ def resource(request):
         resource_list = Resource.objects.all()
         return render_to_response('resource.html', {'resource': resource_list,
                                                     'user': user})
+        
+def news(request, n_id):
+    if n_id:
+        news = News.objects.get(id=n_id)
+        return HttpResponse(news.title)
+    return HttpResponse('页面正在建设中...')
