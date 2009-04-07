@@ -99,14 +99,30 @@ div.text {
 	margin-bottom: 20px;
 }
 
-div.text p img {
+div.text p{
 	float:left; 
 	padding:0 20px 0 0;
+}
+
+div.text img {
+	float:left; 
+	padding:0 20px 0 0;
+	width: 50px;
 }
 
 div.text a { 
 	color: #FFCC00;
 }
+
+div.date {
+	position: absolute;
+	right: 15px;
+	top: 0px;
+	line-height: 35px;
+	color: #AFAFA4;
+	font-weight: bold;
+}
+
 
 div.text a:hover { 
 	color: #FFCC00;
