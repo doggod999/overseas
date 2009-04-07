@@ -22,12 +22,14 @@ def about(request):
 
 def resource(request):
     user = request.session.get('user', None)
+    logined = islogined(request) 
     if not user:
         return HttpResponseRedirect("/")
     else:
         resource_list = Resource.objects.all()
         return render_to_response('resource.html', {'resource': resource_list,
-                                                    'user': user})
+                                                    'user': user,
+                                                    'logined': logined,})
         
 def news(request, n_id):
     if n_id:

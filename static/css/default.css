@@ -214,3 +214,7 @@ ul.menu a:hover {
 	text-decoration: underline;
 	color: #FFFFFF;
 }
+
+div.list {
+	font-size: 18px;
+}
