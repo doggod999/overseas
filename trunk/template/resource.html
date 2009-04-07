@@ -1,0 +1,11 @@
+{% for re in resource %}
+<p>{{ re.name }}: {{ re.value }}<br>
+	{% if user.is_admin%}
+	<a href="/admin/home/resource/{{ re.id }}/">编辑</a> 
+	<a href="/admin/home/resource/{{ re.id }}/delete/">删除</a><br></p>
+	{% endif %}
+{% endfor %}
+{% if user.is_admin%}
+<a href="/admin/home/resource/add/">增加资源信息</a>
+{% endif %}
+<p><a href="/home/">回到主页</a></p>

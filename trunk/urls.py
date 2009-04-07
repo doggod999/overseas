@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     (r'^login/$', 'overseas.login.views.login'),
     (r'^logout/$', 'overseas.login.views.logout'),
     (r'^home/$', 'overseas.home.views.main'),
+    (r'^resource/$', 'overseas.home.views.resource'),
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.STATIC_PATH}),
 

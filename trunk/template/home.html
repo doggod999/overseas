@@ -41,7 +41,7 @@
         <div id="bm">
           <h2>内部信息</h2>
           <ul class="menu">
-            <li><a href="#">海外组资源</a></li>
+            <li><a href="/resource/">海外组资源</a></li>
             <li><a href="#">RFP下载</a></li>
             <li><a href="#">更改个人密码</a></li>
           </ul>
@@ -51,20 +51,21 @@
       <div class="main fr">
       	<h2>最新消息</h2>
         <div class="text">
-          	<p>ff</p>
-          	<p>ff</p>
-          	<p>ff</p>
-          	<p>ff</p>
-          	<p>ff</p>
-          	<p>ff</p>
-          	<p>ff</p>
-          	<p>ff</p>
-          	<p>ff</p>
+          	<p>{{ news.title }}</p>
+          	<p>{{ news.content }}</p>
           	<div class="more"><a href="#">more...</a></div>
         </div>
-        <h2>本周新关注项目</h2>
+        <h2>本周新关注项目
+        {% if user %}
+          <a href="/admin/home/project/add/">增加关注项目</a><br>
+        {% endif %}
+        </h2>
         <div class="text">
-          <div class="more"><a href="#">more...</a></div>
+          <div class="more">
+          
+          <a href="#">more...</a>
+          </div>
+          
         </div>
         <h2>本周提交项目</h2>
         <div class="text">
