@@ -9,17 +9,10 @@ from overseas.home.models import Resource
 
 def main(request):
     user = request.session.get('user', None)
-    log_url = '/'
-    log_txt = '登录'
-    if user:
-        log_url = '/logout/'
-        log_txt = '退出'
-    
+    logined = islogined(request)
     news = News.objects.all().order_by('-id')[0:2]
     
-    return render_to_response('home.html', {'user': user, 
-                                            'log_url': log_url,
-                                            'log_txt': log_txt,
+    return render_to_response('home.html', {'logined': logined, 
                                             'news': news,})
     
 
@@ -39,5 +32,17 @@ def resource(request):
 def news(request, n_id):
     if n_id:
         news = News.objects.get(id=n_id)
-        return HttpResponse(news.title)
-    return HttpResponse('页面正在建设中...')
+    else:
+        news = ''
+    logined = islogined(request)    
+    news_list = News.objects.all().order_by('-id')
+    return render_to_response('news.html', {'news': news,
+                                            'news_list': news_list,
+                                            'logined': logined,})
+    
+def islogined(request):
+    user = request.session.get('user', None)
+    if user:
+        return True
+    else:
+        return False
