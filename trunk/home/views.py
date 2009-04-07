@@ -14,7 +14,7 @@ def main(request):
         log_url = '/logout/'
         log_txt = '退出'
     
-    news = News.objects.all().order_by('-id')[0]
+    news = News.objects.all().order_by('-id')[0:2]
     
     return render_to_response('home.html', {'user': user, 
                                             'log_url': log_url,
