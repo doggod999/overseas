@@ -19,8 +19,9 @@
         </div>
         <h2>本周新关注项目</h2>
         <div class="text">
-        	<div class="list">FDNGP</div>
-        
+        {% for att in attention %}
+        	<div class="list">{{att.duty_person}} 关注 {{ att.name }}</div>
+        {% endfor %}
         {% if logined %}
           <a href="/admin/home/project/add/">增加关注项目</a><br>
         {% endif %}
