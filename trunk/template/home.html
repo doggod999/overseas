@@ -31,6 +31,9 @@
         </div>
         <h2>本周提交项目</h2>
         <div class="text">
+        {% for s in submit %}
+        	<div class="list">{{ s.duty_person }} 需提交 {{ s.name }}</div>
+        {% endfor %}
           <div class="more"><a href="#">more...</a></div>
         </div>
         <h2>正在进行的项目</h2>
