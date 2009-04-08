@@ -15,9 +15,7 @@ def main(request):
     news = News.objects.all().order_by('-id')[0:2]
     
     sunday = getsunday()
-    print sunday
     saturday = getsaturday()
-    print saturday
     
     attention = []
     att = Project.objects.filter(state='A').order_by('-id')
@@ -36,10 +34,19 @@ def main(request):
         if s.end_time <= saturday and s.end_time >= sunday :
             submit.append(s)
     
+    doing = []
+    add1 = Project.objects.filter(state='D').order_by('-start_time')
+    add2 = Project.objects.filter(state='R').order_by('-start_time')
+    for p in add1:
+        doing.append(p)
+    for p in add2:
+        doing.append(p)
+    
     return render_to_response('home.html', {'user': user, 
                                             'news': news,
                                             'attention': attention,
                                             'submit': submit,
+                                            'doing': doing,
                                             })
     
 
