@@ -52,7 +52,8 @@ def main(request):
 
         
 def about(request):
-    return HttpResponseRedirect("/home/")
+    return HttpResponse('''页面正在建设中...<br>\
+                         <a href="/home/">返回主页</a>''')
 
 def resource(request):
     user = request.session.get('user', None)
@@ -77,13 +78,53 @@ def news(request, n_id):
                                             })
     
 def project(request, p_id):
+    sunday = getsunday()
+    saturday = getsaturday()
     user = request.session.get('user', None)
-    project = Project.objects.get(id = p_id)
-    projects = Project.objects.all().order_by('-id')
-    return render_to_response('project.html', {'project': project,
-                                               'projects': projects,
-                                                'user': user,
-                                                })
+    projects = []
+    project = ''
+    title = ''
+    if p_id == 'attention':
+        projects = Project.objects.filter(state='A').order_by('-id')
+        title = '本周关注项目'
+    elif p_id == 'submit':
+        title = '本周提交项目'
+        sub1 = Project.objects.filter(state='D').order_by('-start_time')
+        for s in sub1:
+            if s.end_time <= saturday and s.end_time >= sunday :
+                projects.append(s)
+
+        sub1 = Project.objects.filter(state='R').order_by('-start_time')
+        for s in sub1:
+            if s.end_time <= saturday and s.end_time >= sunday :
+                projects.append(s)
+    elif p_id == 'ing':
+        title = '正在进行的项目'
+        add1 = Project.objects.filter(state='D').order_by('-start_time')
+        add2 = Project.objects.filter(state='R').order_by('-start_time')
+        for p in add1:
+            projects.append(p)
+        for p in add2:
+            projects.append(p)
+    elif p_id == 'all':
+        title = '所有项目'
+        projects = Project.objects.all().order_by('-id')
+    else:
+        project = Project.objects.get(id = p_id)
+        state = project.get_state_display()
+        type = project.get_type_display()
+        projects = Project.objects.all().order_by('-id')
+        return render_to_response('project.html', {'project': project,
+                                                   'state': state,
+                                                   'type': type,
+                                                   'projects': projects,
+                                                    'user': user,
+                                                    'title': title
+                                                    })
+    return render_to_response('project.html', {'projects': projects,
+                                                    'user': user,
+                                                    'title': title
+                                                    })
         
 def attention(request, p_id):
     pass
