@@ -21,7 +21,7 @@
         {% for att in attention %}
         	<div class="list">{{att.duty_person}} 关注 <a href="/project/{{ att.id }}/">{{ att.name }}</a></div>
         {% endfor %}
-        {% if logined %}
+        {% if user %}
           <a href="/admin/home/project/add/">增加关注项目</a><br>
         {% endif %}
         <div class="more">

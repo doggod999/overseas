@@ -64,3 +64,10 @@ class Resource(models.Model):
     
     def __unicode__(self):
         return self.name
+    
+#RFP
+class RFP(models.Model):
+    date_upload = models.DateTimeField()
+    zip_file = models.FileField(upload_to='RFP')
+    def __unicode__(self):
+        return self.date_upload

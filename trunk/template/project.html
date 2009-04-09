@@ -24,6 +24,9 @@
         {% for pro in projects %}
       		<div class="list"><a href="/project/{{ pro.id }}/">{{ pro.name }}</a> </div>
       	{% endfor %}
+      	{% if user and add %}
+          	<a href="/admin/home/project/add/">增加关注项目</a><br>
+        {% endif %}
         </div>
         <div class="clearfix"></div>
     </div>

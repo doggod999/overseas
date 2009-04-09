@@ -9,6 +9,7 @@ from overseas.home.models import User
 from overseas.home.models import News
 from overseas.home.models import Resource
 from overseas.home.models import Project
+from overseas.home.models import RFP
 
 def main(request):
     user = request.session.get('user', None)
@@ -84,9 +85,11 @@ def project(request, p_id):
     projects = []
     project = ''
     title = ''
+    add = False
     if p_id == 'attention':
         projects = Project.objects.filter(state='A').order_by('-id')
         title = '本周关注项目'
+        add = True
     elif p_id == 'submit':
         title = '本周提交项目'
         sub1 = Project.objects.filter(state='D').order_by('-start_time')
@@ -110,6 +113,7 @@ def project(request, p_id):
         title = '所有项目'
         projects = Project.objects.all().order_by('-id')
     else:
+        title = '所有项目'
         project = Project.objects.get(id = p_id)
         state = project.get_state_display()
         type = project.get_type_display()
@@ -119,15 +123,26 @@ def project(request, p_id):
                                                    'type': type,
                                                    'projects': projects,
                                                     'user': user,
-                                                    'title': title
+                                                    'title': title,
                                                     })
     return render_to_response('project.html', {'projects': projects,
                                                     'user': user,
-                                                    'title': title
+                                                    'title': title,
+                                                    'add': add,
                                                     })
         
-def attention(request, p_id):
-    pass
+def download(request, f_id):
+    user = request.session.get('user', None)
+    if not user:
+        return HttpResponseRedirect('/')
+    if f_id:
+        rfp = RFP.objects.get(f_id)
+        return HttpResponseRedirect(rfp.zip_file.url)
+    else:
+        rfp = RFP.objects.all().order_by('-date_upload')
+        return render_to_response('download.html', {'user': user,
+                                                   'rfp': rfp,
+                                                    })
 
 #本周第一天，周日
 def getsunday():
