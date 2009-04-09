@@ -19,7 +19,7 @@
         <h2>本周新关注项目</h2>
         <div class="text">
         {% for att in attention %}
-        	<div class="list">{{att.duty_person}} 关注 <a href="/project/detail/{{ att.id }}/">{{ att.name }}</a></div>
+        	<div class="list">{{att.duty_person}} 关注 <a href="/project/{{ att.id }}/">{{ att.name }}</a></div>
         {% endfor %}
         {% if logined %}
           <a href="/admin/home/project/add/">增加关注项目</a><br>
@@ -31,14 +31,14 @@
         <h2>本周提交项目</h2>
         <div class="text">
         {% for s in submit %}
-        	<div class="list">{{ s.duty_person }} 需提交 <a href="/project/detail/{{ s.id }}/">{{ s.name }}</a></div>
+        	<div class="list">{{ s.duty_person }} 需提交 <a href="/project/{{ s.id }}/">{{ s.name }}</a></div>
         {% endfor %}
           <div class="more"><a href="#">more...</a></div>
         </div>
         <h2>正在进行的项目</h2>
         <div class="text">
         {% for p in doing %}
-        	<div class="list">{{ p.duty_person }} 负责 <a href="/project/detail/{{ p.id }}/">{{ p.name }}</a></div>
+        	<div class="list">{{ p.duty_person }} 负责 <a href="/project/{{ p.id }}/">{{ p.name }}</a></div>
         {% endfor %}
         <div class="more"><a href="#">more...</a></div>
         </div>

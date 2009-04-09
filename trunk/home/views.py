@@ -76,6 +76,15 @@ def news(request, n_id):
                                             'user': user,
                                             })
     
+def project(request, p_id):
+    user = request.session.get('user', None)
+    project = Project.objects.get(id = p_id)
+    projects = Project.objects.all().order_by('-id')
+    return render_to_response('project.html', {'project': project,
+                                               'projects': projects,
+                                                'user': user,
+                                                })
+        
 def attention(request, p_id):
     pass
 
