@@ -21,6 +21,7 @@ urlpatterns = patterns('',
     (r'^about/$', 'overseas.home.views.about'),
     (r'^news/((?P<n_id>\w+)/)?$', 'overseas.home.views.news'),
     (r'^project/((?P<p_id>\w+)/)?$', 'overseas.home.views.project'),
+    (r'^download/((?P<f_id>\w+)/)?$', 'overseas.home.views.download'),
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.STATIC_PATH}),
 
