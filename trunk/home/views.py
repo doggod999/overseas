@@ -136,7 +136,7 @@ def download(request, f_id):
     if not user:
         return HttpResponseRedirect('/')
     if f_id:
-        rfp = RFP.objects.get(f_id)
+        rfp = RFP.objects.get(id = f_id)
         return HttpResponseRedirect(rfp.zip_file.url)
     else:
         rfp = RFP.objects.all().order_by('-date_upload')
