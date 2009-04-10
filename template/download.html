@@ -1,0 +1,15 @@
+{% extends "basic.html" %}
+
+{% block content %}
+<div class="main fr">
+	<h2>RFP下载</h2>
+	<div class="text">
+		{% for r in rfp %}
+		<div class="date">
+		<a href="/download/{{ r.id }}/">{{ r.date_upload|date:"Y-m-d" }}</a>  
+		<!-- <a href="{{ r.zip_file.url }}">{{ r.date_upload|date:"Y-m-d" }}</a> -->
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock%}
