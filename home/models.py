@@ -68,6 +68,4 @@ class Resource(models.Model):
 #RFP
 class RFP(models.Model):
     date_upload = models.DateTimeField()
-    zip_file = models.FileField(upload_to='RFP')
-    def __unicode__(self):
-        return self.date_upload
+    zip_file = models.FileField(upload_to='RFP', blank=True)
