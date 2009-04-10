@@ -10,6 +10,9 @@
 		<!-- <a href="{{ r.zip_file.url }}">{{ r.date_upload|date:"Y-m-d" }}</a> -->
 		</div>
 		{% endfor %}
+		{% if user.is_admin %}
+		<a href="/admin/home/rfp/add/">上传RFP</a>  
+		{% endif %}
 	</div>
 </div>
 {% endblock%}

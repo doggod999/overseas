@@ -7,8 +7,8 @@
         <div class="text">
 	        <div class="news">
 	        	<h3>{{ project.name }}</h3>
-	        	<div class="date">开始时间:&nbsp;{{ project.start_time|date:"Y-m-d H:i" }}</div>
-	        	<div class="date">结束时间:&nbsp;{{ project.end_time|date:"Y-m-d H:i" }}</div>
+	        	<div class="date">开始时间:&nbsp;{{ project.start_time|date:"Y-m-d" }}</div>
+	        	<div class="date">提交时间:&nbsp;{{ project.end_time|date:"Y-m-d" }}</div>
 	        	项目负责人： {{ project.duty_person }}<br>
 	        	项目状态： {{ state }}<br>
 	        	项目来源： {{ project.source }}<br>
@@ -22,7 +22,7 @@
         <h2>{{ title }}</h2>
         <div class="text">
         {% for pro in projects %}
-      		<div class="list"><a href="/project/{{ pro.id }}/">{{ pro.name }}</a> </div>
+      		<div class="list">{{ pro.duty_person }}  <a href="/project/{{ pro.id }}/">{{ pro.name }}</a> </div>
       	{% endfor %}
       	{% if user and add %}
           	<a href="/admin/home/project/add/">增加关注项目</a><br>
