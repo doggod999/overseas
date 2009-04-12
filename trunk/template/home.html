@@ -14,6 +14,9 @@
 	          	<p>{{ new.content }}</p>
           	</div>
           	{% endfor %}
+          	{% if user.is_admin %}
+          	<a href="/admin/home/news/add/">发布新闻</a>
+          	{% endif %}
           	<div class="more"><a href="/news/">more...</a></div>
         </div>
         <h2>本周新关注项目</h2>
